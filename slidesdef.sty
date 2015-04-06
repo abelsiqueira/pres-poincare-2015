@@ -7,8 +7,10 @@
 \usepackage{listings}
 \usepackage{epsfig}
 \usepackage{tikz}
+\usetikzlibrary{shapes,arrows}
 \usepackage{pgfplots}
 \usepackage{colordef}
+\usepackage{textcomp}
 \pgfplotsset{compat=newest}
 \usepackage{amssymb, amsmath, amsfonts}
 \def\newblock{\hskip .11em plus .33em minus .07em}
@@ -109,3 +111,11 @@
 
 \newcommand{\bashgt}{ \textgreater\ }
 \newcommand{\ddash}{-{}-}
+
+\lstset{
+  basicstyle=\tt\scriptsize,
+  breaklines=true,
+  frame=single,
+  extendedchars=true,
+  upquote=true
+}
