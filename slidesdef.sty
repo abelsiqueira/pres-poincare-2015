@@ -98,10 +98,15 @@
 \setbeamercolor{background canvas}{bg = mylightcolor}
 
 \newcommand{\cmd}[1]{
-\begin{flushleft}
 {\color{yellow} \tt \$ #1 }\\
-\end{flushleft}
 }
+
+\newcommand{\jlcmd}[1]{
+{\tt {\color{green} julia>} {\color{white} #1} }\\
+}
+
+\newcommand{\jlindent}{\ \ \ \ \ \ \ }
+\newcommand{\spcindent}{\ \ \ \ }
 
 \newcommand{\cmdinline}[1]{
 {\color{yellow} \tt #1} }
@@ -111,6 +116,10 @@
 
 \newcommand{\bashgt}{ \textgreater\ }
 \newcommand{\ddash}{-{}-}
+\newcommand{\bkslash}{\textbackslash}
+\newcommand{\elev}{\textasciicircum}
+\newcommand{\twodots}{::}
+% Ctrl+V" = "
 
 \lstset{
   basicstyle=\tt\scriptsize,
