@@ -249,59 +249,18 @@
   \ctr{O Método de Newton para otimização}
   $$ f(x) = (1-x_1)^2 + 4(x_2 - x_1^2)^2$$
   \begin{center}
-    \def\b{2}
-    \begin{tikzpicture}[scale=1.6]
-      \draw (-1.5,-1.0) -- (1.5,-1.0) -- (1.5,2.0) -- (-1.5,2.0) -- cycle;
-      \foreach \x in {-1.5, -1.0,...,1.5} {
-        \draw (\x,-1.0) -- (\x,-1.1) node[below] {$\x$};
-        \draw (\x,2.0) -- (\x,2.1) node[above] {$\x$};
-        \draw[gray,thin,dotted] (\x,-1.0) -- (\x,2.0);
-      }
-      \foreach \y in {-1, 0,..., 2} {
-        \draw (-1.5,\y) -- (-1.6,\y) node[left] {$\y$};
-        \draw (1.5,\y) -- (1.6,\y) node[right] {$\y$};
-        \draw[gray,dotted] (-1.5,\y) -- (1.5,\y);
-      }
-      \clip (-1.5,-1.0) rectangle (1.5,2.0);
-      %\foreach \L in {0, 5, 10, ..., 100} {
-        %\def\r{\L/15}
-        %\draw[domain=0:360, samples=90, color=red!\L!blue] plot ({1-\r*cos(\x)}, {1 - 2*\r*cos(\x) +
-          %\r*\r*cos(\x)*cos(\x) + \r*sin(\x)/\b});
-      %}
-    \end{tikzpicture}
-  \end{center}
-}
+    \only<1>{ \includegraphics[height=0.6\textheight]{conicas/curvas.pdf} }
 
-\myframetop{
-  \ctr{O Método de Newton para otimização}
-  $$ f(x) = (1-x_1)^2 + 4(x_2 - x_1^2)^2$$
-  \begin{center}
-    \def\b{2}
-    \begin{tikzpicture}[scale=1.6]
-      \draw (-1.5,-1.0) -- (1.5,-1.0) -- (1.5,2.0) -- (-1.5,2.0) -- cycle;
-      \foreach \x in {-1.5, -1.0,...,1.5} {
-        \draw (\x,-1.0) -- (\x,-1.1) node[below] {$\x$};
-        \draw (\x,2.0) -- (\x,2.1) node[above] {$\x$};
-        \draw[gray,thin,dotted] (\x,-1.0) -- (\x,2.0);
-      }
-      \foreach \y in {-1, 0,..., 2} {
-        \draw (-1.5,\y) -- (-1.6,\y) node[left] {$\y$};
-        \draw (1.5,\y) -- (1.6,\y) node[right] {$\y$};
-        \draw[gray,dotted] (-1.5,\y) -- (1.5,\y);
-      }
-      \clip (-1.5,-1.0) rectangle (1.5,2.0);
+    \only<2>{ \includegraphics[height=0.6\textheight]{conicas/iter0.pdf} }
 
-      % Newton x0 = (-0.5,0)
-      % x1 = (-0.167,-0.083)
-      \fill (-0.5,0) circle (0.05);
-      \foreach \L in {0, 5, 10, ..., 100} {
-        \def\r{\L/15}
-        %\draw[domain=0:360, samples=90, color=white!\L!gray] plot
-            %({1-\r*cos(\x)}, {1 - 2*\r*cos(\x) + \r*\r*cos(\x)*cos(\x) +
-            %\r*sin(\x)/\b});
-        %\draw[domain=0:360, samples=90, color=red!\L!gray] plot
-          %({
-      }
-    \end{tikzpicture}
+    \only<3>{ \includegraphics[height=0.6\textheight]{conicas/iter1.pdf} }
+
+    \only<4>{ \includegraphics[height=0.6\textheight]{conicas/iter2.pdf} }
+
+    \only<5>{ \includegraphics[height=0.6\textheight]{conicas/iter3.pdf} }
+
+    \only<6>{ \includegraphics[height=0.6\textheight]{conicas/iter4.pdf} }
+
+    \only<7>{ \includegraphics[height=0.6\textheight]{conicas/iter5.pdf} }
   \end{center}
 }

@@ -12,11 +12,11 @@ function foo()
 
   x = [-0.5; 0.0]
 
-  rnd(a) = round(a,3)
+  rnd(a) = ceil(a,4)
 
   file = open("conicas.list", "w")
 
-  while norm(g(x)) > 1e-2
+  while norm(g(x)) > 0.10
     fx = f(x); gx = g(x); Hx = H(x);
     h = gx - Hx*x
     fplus = f(x) - dot(gx,x) + 0.5*dot(x,Hx*x)
@@ -27,7 +27,7 @@ function foo()
     xv = rnd(x[1])
     yv = rnd(x[2])
     x = x - Hx\gx
-    fmin = rnd(L(x))+1e-3
+    fmin = ceil(L(x)+1e-4, 4)
     write(file, "$a $b $c $d $e $(rnd(fplus)) $fset $fmin $xv $yv\n")
   end
 

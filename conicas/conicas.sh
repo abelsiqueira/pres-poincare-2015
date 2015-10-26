@@ -4,6 +4,7 @@ template=conicas-template.tex
 file=conicas.list
 vars=(QUADA QUADB QUADC QUADD QUADE QUADF FSET FMIN XVAL YVAL)
 
+rm -f iter*
 iter=0
 cat $file | while read line
 do
@@ -18,5 +19,6 @@ do
   echo $output | sed 's/\$ /\n/g' > tmp.tex
   latexmk -pdf tmp.tex
   mv tmp.pdf iter$iter.pdf
+  iter=$((iter+1))
 done
-latexmk -c tmp
+rm -f tmp.*
