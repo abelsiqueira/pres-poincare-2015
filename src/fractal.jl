@@ -49,13 +49,13 @@ function foo()
   r,s = sqrt(2+sqrt(3)), sqrt(2-sqrt(3))
   roots = [r s -r -s; s r -s -r]
   M = fractal(F, J, (-2.0,-2.0), (2.0,2.0), roots)
-  frac_save(M, "ex1.png")
+  frac_save(M, "fractal1.png")
 
   F(x,y) = [x^3-3*x*y^2-1; 3*x^2*y-y^3]
   J(x,y) = [3*x^2-3*y^2 -6*x*y; 6*x*y 3*x^2-3*y^2]
   roots = [cos([0 2pi/3 4pi/3]); sin([0 2pi/3 4pi/3])]
   M = fractal(F, J, (-2.0,-2.0), (2.0,2.0), roots)
-  frac_save(M, "ex2.png")
+  frac_save(M, "fractal2.png")
 end
 
 foo()

@@ -25,17 +25,23 @@ function quad(f::Function, g::Vector, H::Matrix, xm, xM, a, lvls, filename)
 end
 
 function foo()
-  f(x) = (1-x[1])^2 + 4*(x[2]-x[1]^2)^2
-  g(x) = [-2+2x[1]-16*x[1]*(x[2]-x[1]^2); 8*(x[2]-x[1]^2)]
-  H(x) = [2-16*x[2]+48*x[1]^2 -16*x[1]; -16*x[1] 8]
+  f(x) = x[1]^3-3*x[1] + x[2]^2
+  g(x) = [3*x[1]^2-3; 2*x[2]]
+  H(x) = [6*x[1] 0.0; 0.0 2.0]
 
-  lvls = 0.1*linspace(1, 40, 10).^2
+  lvls = linspace(f([1.0;0.0]), f([-1.0;-2.0]), 30)
+  lvls = sort([lvls; f([-1.0;0.0])])
 
   t = linspace(-2, 2, 200)
-  x = [-0.5;0.0]
 
-  for i = 1:7
-    x = quad(f, g(x), H(x), (-2.0,-2.0), (2.0,2.0), x, lvls, "rosenbr$i")
+  x = [0.5;0.0]
+  for i = 1:3
+    x = quad(f, g(x), H(x), (-2.0,-2.0), (2.0,2.0), x, lvls, "min-newton-works$i")
+  end
+
+  x = [-0.5;0.0]
+  for i = 1:3
+    x = quad(f, g(x), H(x), (-2.0,-2.0), (2.0,2.0), x, lvls, "min-newton-fail$i")
   end
 end
 
