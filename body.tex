@@ -1,5 +1,5 @@
 \begin{frame}
-  \tableofcontents
+  \scriptsize{\tableofcontents}
 \end{frame}
 
 \section{Zeros de Funções}
@@ -8,7 +8,7 @@
 \AtBeginSection[]
 {
  \begin{frame}<beamer>
-   \tableofcontents[currentsection]
+   \scriptsize{\tableofcontents[currentsection]}
  \end{frame}
 }
 
@@ -60,7 +60,7 @@
   Sob {\bf hipóteses}, $f'(x^k) \rightarrow 0$.
 }
 
-\myframeout{
+\myframe{
   \begin{center}
     \foreach \a in {1, 2, 3} {
       \foreach \b in {1,2,3} {
@@ -290,8 +290,7 @@
   }
 }
 
-%\myframetop{
-\myframeout{
+\myframetop{
   \ctr{O Método de Newton para otimização}
   $$ f(x) = (1-x_1)^2 + 4(x_2 - x_1^2)^2, \quad
   \only<1-3>{x^0 = (-0.500, 0.000)}
@@ -314,8 +313,7 @@
   \end{center}
 }
 
-%\myframetop{
-\myframeout{
+\myframetop{
   \ctr{O Método de Newton para otimização}
   \[ f(x) = x_1^3-3x_1 + x_2^2 \]
   \begin{center}
@@ -330,8 +328,7 @@
   \end{center}
 }
 
-%\myframetop{
-\myframeout{
+\myframetop{
   \ctr{O Método de Newton para otimização}
   \[ f(x) = x_1^3-3x_1 + x_2^2 \]
   \begin{center}
@@ -348,7 +345,7 @@
 
 \section{Convergência}
 
-\subsection{Convergência}
+\subsection{Uma dimensão}
 
 \foreach \ex in {1,2} {
 \myframe{
@@ -403,8 +400,9 @@
   \end{center}
 }
 
+\subsection{Duas dimensões}
+
 \myframe{
-  \ctr{Em duas dimensões}
   \begin{equation*}
     \left\{\begin{array}{rcl}
       x_1^2 + x_2^2 & = & 4 \\
@@ -434,6 +432,8 @@
   \end{minipage}
 }
 
+\subsection{Exemplo tradicional}
+
 \myframe{
   \ctr{O exemplo tradicional}
   $$ z^3 = 1, \qquad z \in \mathbb{C} $$
@@ -450,7 +450,6 @@
 }
 
 \myframe{
-  \ctr{O exemplo tradicional}
   $$ z = x + yi $$
   $$ z^3 = (x^3-3xy^2) + (3x^2y-y^3)i $$
   \begin{equation*}
@@ -462,10 +461,7 @@
 }
 
 \myframe{
-  \only<1>{
-    \ctr{O exemplo tradicional}
-  }
-  \only<2->{
+  \onslide<2->{
     \ctr{O fractal de Newton}
   }
   \begin{center}
