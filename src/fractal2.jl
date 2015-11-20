@@ -74,5 +74,5 @@ function foo()
   M, I = fractal(F, J, (-2.0,-2.0), (2.0,2.0), roots)
   frac_save(M, I, "ex6.png")
 end
-[i,j]
+
 foo()

@@ -203,6 +203,152 @@
   * Com 5 casas decimais
 }
 
+\myframe{
+  \ctr{Em uma dimensão}
+  $$ x^{k+1} = x^k - \frac{f(x^k)}{f'(x^k)} $$
+}
+
+\myframe{
+  \ctr{Em uma dimensão}
+  \begin{center}
+    \only<1>{ \includegraphics[height=0.8\textheight]{src/newton1d1-s1.png} }
+
+    \only<2>{ \includegraphics[height=0.8\textheight]{src/newton1d1-s2.png} }
+
+    \only<3>{ \includegraphics[height=0.8\textheight]{src/newton1d1-s3.png} }
+
+    \only<4>{ \includegraphics[height=0.8\textheight]{src/newton1d2-s1.png} }
+
+    \only<5>{ \includegraphics[height=0.8\textheight]{src/newton1d2-s2.png} }
+
+    \only<6>{ \includegraphics[height=0.8\textheight]{src/newton1d2-s3.png} }
+
+    \only<7>{ \includegraphics[height=0.8\textheight]{src/newton1d3-s1.png} }
+
+    \only<8>{ \includegraphics[height=0.8\textheight]{src/newton1d3-s2.png} }
+
+    \only<9>{ \includegraphics[height=0.8\textheight]{src/newton1d3-s3.png} }
+  \end{center}
+}
+
+\subsection*{Convergência}
+
+\myframe{
+  $$ f(x) = x^2 - 1 $$
+  \begin{center}
+    \foreach \a in {1, 2, 3} {
+      \only<\a>{ \includegraphics[height=0.8\textheight]{src/conv-ex1-\a.png} }
+
+    }
+  \end{center}
+}
+
+\myframe{
+  $$ f(x) = x^3 - x $$
+  \begin{center}
+    \foreach \a in {1, 2, 3, 4, 5} {
+      \only<\a>{ \includegraphics[height=0.8\textheight]{src/conv-ex2-\a.png} }
+
+    }
+  \end{center}
+}
+
+\myframe{
+  \ctr{Em duas dimensões}
+  \begin{equation*}
+    \left\{\begin{array}{rcl}
+      x_1^2 + x_2^2 & = & 4 \\
+      x_1x_2 & = & 1
+    \end{array}\right.
+  \end{equation*}
+  \begin{minipage}{0.48\textwidth}
+    \begin{center}
+    \begin{tikzpicture}[scale=1.0]
+      \draw[->] (-2.6,0) -- (2.6,0);
+      \draw[->] (0,-2.6) -- (0,2.6);
+      \draw (-2,-2) rectangle (2,2);
+      \draw[black,thick] (0,0) circle (2);
+      \draw[black,thick,domain=0.4:2.5] plot (\x,{1/\x});
+      \draw[black,thick,domain=-2.5:-0.4] plot (\x,{1/\x});
+      \fill[red] (1.93,0.52) circle (0.08);
+      \fill[green] (0.52,1.93) circle (0.08);
+      \fill[yellow] (-1.93,-0.52) circle (0.08);
+      \fill[blue] (-0.52,-1.93) circle (0.08);
+    \end{tikzpicture}
+    \end{center}
+  \end{minipage}
+  \begin{minipage}{0.48\textwidth}
+    \only<1>{ \includegraphics[height=0.46\textheight]{src/ex1.png} }
+
+    \only<2>{ \includegraphics[height=0.46\textheight]{src/ex3.png} }
+  \end{minipage}
+}
+
+\myframe{
+  \ctr{O exemplo tradicional}
+  $$ z^3 = 1, \qquad z \in \mathbb{C} $$
+  $$ z = 1, \frac{-1+\sqrt{3}i}{2}, \frac{-1-\sqrt{3}i}{2}. $$
+  \begin{center}
+    \begin{tikzpicture}[scale=0.8]
+      \draw[->] (0,-1.6) -- (0,1.6) node[left] {Imag.};
+      \draw[->] (-1.6,0) -- (1.6,0) node[below] {Real};
+      \fill (1,0) circle (0.08);
+      \fill (-0.5,-0.866) circle (0.08);
+      \fill (-0.5, 0.866) circle (0.08);
+    \end{tikzpicture}
+  \end{center}
+}
+
+\myframe{
+  \ctr{O exemplo tradicional}
+  $$ z = x + yi $$
+  $$ z^3 = (x^3-3xy^2) + (3x^2y-y^3)i $$
+  \begin{equation*}
+    F(x,y) = \left[
+    \begin{array}{c}
+      x^3 - 3xy^2 - 1 \\ 3x^2y-y^3
+  \end{array}\right]
+  \end{equation*}
+}
+
+\myframe{
+  \only<1>{
+    \ctr{O exemplo tradicional}
+  }
+  \only<2->{
+    \ctr{O fractal de Newton}
+  }
+  \begin{center}
+    \only<1-2>{
+      \includegraphics[height=0.7\textheight]{src/ex2.png}
+    }
+    \only<3>{
+      \includegraphics[height=0.7\textheight]{src/ex4.png}
+    }
+  \end{center}
+}
+
+\myframe{
+  \begin{equation*}
+    F(x,y) = \left[
+    \begin{array}{c}
+      x(y-x^2) \\ (x^2-1)(y+1)
+  \end{array}\right]
+  \end{equation*}
+  \begin{center}
+    \includegraphics[height=0.7\textheight]{src/ex5.png}
+  \end{center}
+}
+
+\myframe{
+  \begin{equation*}
+    z^4 = 1, \qquad z \in \mathbb{C}
+  \end{equation*}
+  \begin{center}
+    \includegraphics[height=0.7\textheight]{src/ex6.png}
+  \end{center}
+}
+
 \section*{Otimização}
 
 \myframe{
@@ -249,18 +395,9 @@
   \ctr{O Método de Newton para otimização}
   $$ f(x) = (1-x_1)^2 + 4(x_2 - x_1^2)^2$$
   \begin{center}
-    \only<1>{ \includegraphics[height=0.6\textheight]{conicas/curvas.pdf} }
+    \foreach \a in {1,2,3,4,5,6} {
+      \only<\a>{ \includegraphics[height=0.6\textheight]{src/rosenbr\a.png} }
 
-    \only<2>{ \includegraphics[height=0.6\textheight]{conicas/iter0.pdf} }
-
-    \only<3>{ \includegraphics[height=0.6\textheight]{conicas/iter1.pdf} }
-
-    \only<4>{ \includegraphics[height=0.6\textheight]{conicas/iter2.pdf} }
-
-    \only<5>{ \includegraphics[height=0.6\textheight]{conicas/iter3.pdf} }
-
-    \only<6>{ \includegraphics[height=0.6\textheight]{conicas/iter4.pdf} }
-
-    \only<7>{ \includegraphics[height=0.6\textheight]{conicas/iter5.pdf} }
+    }
   \end{center}
 }

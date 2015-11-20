@@ -35,9 +35,9 @@ function frac_save(M, filename)
   img = zeros(n, m, 3)
   for i = 1:m
     for j = 1:n
-      img[j,i,1] = M[i,j]%2
-      img[j,i,2] = div(M[i,j],2)%2
-      img[j,i,3] = div(M[i,j],4)%2
+      img[j,i,1] = M[i,n-j+1]%2
+      img[j,i,2] = div(M[i,n-j+1],2)%2
+      img[j,i,3] = div(M[i,n-j+1],4)%2
     end
   end
   imwrite(Images.colorim(img), filename)
