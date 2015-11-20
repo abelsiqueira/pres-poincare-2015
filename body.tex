@@ -432,12 +432,14 @@
   \end{minipage}
 }
 
-\subsection{Exemplo tradicional}
+\subsection{Exemplo Tradicional}
 
 \myframe{
-  \ctr{O exemplo tradicional}
+  \ctr{O Exemplo Tradicional}
   $$ z^3 = 1, \qquad z \in \mathbb{C} $$
+  \pause
   $$ z = 1, \frac{-1+\sqrt{3}i}{2}, \frac{-1-\sqrt{3}i}{2}. $$
+  \pause
   \begin{center}
     \begin{tikzpicture}[scale=0.8]
       \draw[->] (0,-1.6) -- (0,1.6) node[left] {Imag.};
@@ -451,7 +453,9 @@
 
 \myframe{
   $$ z = x + yi $$
+  \pause
   $$ z^3 = (x^3-3xy^2) + (3x^2y-y^3)i $$
+  \pause
   \begin{equation*}
     F(x,y) = \left[
     \begin{array}{c}
@@ -494,3 +498,11 @@
     \includegraphics[height=0.7\textheight]{src/ex6.png}
   \end{center}
 }
+
+\section{Referências}
+
+\begin{frame}[allowframebreaks]
+  \nocite{fractal:karas, otimizacao:ribeiro, otimizacao:nocedal,
+  numerico:ruggiero, numerico:burden}
+  \printbibliography
+\end{frame}
