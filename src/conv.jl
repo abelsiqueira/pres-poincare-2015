@@ -1,5 +1,7 @@
 using Winston
 
+include("aux.jl")
+
 const colors = ["red", "blue", "green", "yellow"]
 
 function ex1()
@@ -9,6 +11,7 @@ function ex1()
   fd(x) = 2*x
   add(p, Curve(t, f(t)))
   add(p, Curve([-2;2], [0;0], linestyle="dashed"))
+  setattr(p, "xrange", (-2,2))
   setattr(p, "yrange", (-1.5,2))
   createplotfile(p, "conv-ex1-1.png")
   a = 0.6

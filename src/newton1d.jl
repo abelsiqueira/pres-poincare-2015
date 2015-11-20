@@ -38,17 +38,17 @@ function foo()
 
   f(x) = x.^2 - 1
   fd(x) = 2*x
-  x = -0.3
+  x = -0.4
   for i = 1:3
     x = newtonplot(f, fd, (-2,2), (-1.5,2.0), x, "conv1d-ex2-$i")
   end
 
   f(x) = x.^3 - x
   fd(x) = 3*x.^2 - 1
-  x0s = [sqrt(3)/3+0.1; -sqrt(3)/3-0.1; sqrt(5)/5-0.1; sqrt(5)/5;
+  x0s = [sqrt(3)/3+0.2; -1.2; sqrt(5)/5-0.1; sqrt(5)/5;
     sqrt(5)/5+1e-1; sqrt(5)/5+1e-2; sqrt(5)/5+1e-3]
   for j = 1:length(x0s)
-    x = 0.3
+    x = x0s[j]
     for i = 1:3
       x = newtonplot(f, fd, (-2,2), (-2.0,2.0), x, "conv1d-ex$(j+2)-$i")
     end

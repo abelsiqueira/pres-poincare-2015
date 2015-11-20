@@ -350,6 +350,22 @@
 
 \subsection{Convergência}
 
+\foreach \ex in {1,2} {
+\myframe{
+  \[ f(x) = x^2 - 1 \]
+  \begin{center}
+    \foreach \a in {1,2,3} {
+      \foreach \b in {1,2,3} {
+        \def\c{\the\numexpr3*\a+\b-3\relax}
+        \only<\c>{ \includegraphics[height=0.8\textheight]{src/conv1d-ex\ex-\a-s\b.png} }
+
+      }
+
+    }
+  \end{center}
+}
+}
+
 \myframe{
   $$ f(x) = x^2 - 1 $$
   \begin{center}
@@ -358,6 +374,23 @@
 
     }
   \end{center}
+}
+
+
+\foreach \ex in {3,4,5,6,7,8,9} {
+\myframe{
+  \[ f(x) = x^3 - x \]
+  \begin{center}
+    \foreach \a in {1,2,3} {
+      \foreach \b in {1,2,3} {
+        \def\c{\the\numexpr3*\a+\b-3\relax}
+        \only<\c>{ \includegraphics[height=0.8\textheight]{src/conv1d-ex\ex-\a-s\b.png} }
+
+      }
+
+    }
+  \end{center}
+}
 }
 
 \myframe{
