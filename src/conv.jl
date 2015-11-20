@@ -1,10 +1,6 @@
 using Winston
 
 const colors = ["red", "blue", "green", "yellow"]
-function createplotfile(p, file)
-  savefig(p, file, "width", 640, "height", 480)
-  run(`mogrify -fuzz 10% -transparent white $file`)
-end
 
 function ex1()
   t = linspace(-2,2,100)

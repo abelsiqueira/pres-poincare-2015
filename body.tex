@@ -1,10 +1,80 @@
+\begin{frame}
+  \tableofcontents
+\end{frame}
+
+\section{Zeros de funções}
+\subsection{Introdução}
+
 \myframe{
-  \ctr{Sumário}
+  \ctr{ Zeros de uma função real }
+  \only<1>{
+  \[ f(x) = 0, \qquad f:\mathbb{R}\rightarrow\mathbb{R} \]
+  }
+  \only<2->{
+  \[ f(x) = (x^2-1)(x^2-4) + \sin(3x-3) \]
+  }
+  \onslide<3>{
+  \begin{center}
+    \includegraphics[height=0.6\textheight]{src/funex-1.png}
+  \end{center}
+  }
 }
 
-\section*{Introdução}
+\subsection{aproximação linear}
 
-\subsection*{Equações não-lineares}
+\myframetop{
+  \ctr{ Aproximação linear }
+  \[ f(x) = f(a) + f'(a)(x-a) + E(x) \]
+  \begin{center}
+  \only<2>{ \includegraphics[height=0.6\textheight]{src/funex-2.png} }
+
+  \only<3>{ \includegraphics[height=0.6\textheight]{src/funex-3.png} }
+  \end{center}
+}
+
+\myframe{
+  \ctr{ O zero da função afim }
+  \[ L(x) = f(a) + f'(a)(x-a) = 0 \]
+  \pause
+  \[ x = a - \frac{f(a)}{f'(a)}, \qquad
+  f'(a) \neq 0 \]
+}
+
+\myframe{
+  \ctr{Método de Newton}
+  Dado $x^0$, defina a sequência
+  $$ x^{k+1} = x^k - \frac{f(x^k)}{f'(x^k)} $$
+  se $f'(x^k) \neq 0$.
+
+  \pause
+  Sob {\bf hipóteses}, $f'(x^k) \rightarrow 0$.
+}
+
+\myframe{
+  \begin{center}
+    \only<1>{ \includegraphics[height=0.8\textheight]{src/newton1d1-s1.png} }
+
+    \only<2>{ \includegraphics[height=0.8\textheight]{src/newton1d1-s2.png} }
+
+    \only<3>{ \includegraphics[height=0.8\textheight]{src/newton1d1-s3.png} }
+
+    \only<4>{ \includegraphics[height=0.8\textheight]{src/newton1d2-s1.png} }
+
+    \only<5>{ \includegraphics[height=0.8\textheight]{src/newton1d2-s2.png} }
+
+    \only<6>{ \includegraphics[height=0.8\textheight]{src/newton1d2-s3.png} }
+
+    \only<7>{ \includegraphics[height=0.8\textheight]{src/newton1d3-s1.png} }
+
+    \only<8>{ \includegraphics[height=0.8\textheight]{src/newton1d3-s2.png} }
+
+    \only<9>{ \includegraphics[height=0.8\textheight]{src/newton1d3-s3.png} }
+  \end{center}
+}
+
+
+\section{Equações não-lineares}
+\subsection{Introdução}
 
 \myframetop{
   \ctr{Equações não-lineares}
@@ -33,6 +103,7 @@
   \ctr{Equações não-lineares}
   $$ F(x) = 0, \qquad
   F:\mathbb{R}^n\rightarrow\mathbb{R}^n. $$
+  \qquad
   \begin{equation*}
     \left\{\begin{array}{rcl}
       x_1^2 + x_2^2 & = & 4 \\
@@ -73,60 +144,43 @@
   \end{center}
 }
 
-\subsection*{A aproximação linear}
+\subsection{A aproximação linear}
 
 \myframetop{
   \ctr{A Aproximação linear}
   $$ F(x) \approx L(x) =  F(a) + F'(a)(x-a). $$
-  $$ L(a) = F(a) \qquad L'(a) = F'(a). $$
+  \pause
   \begin{equation*}
     F(x) = \left[\begin{array}{c}
       x_1^2 + x_2^2 - 4 \\ x_1x_2 - 1
     \end{array}\right]
-    \qquad
+    \quad
     F'(x) = \left[\begin{array}{cc}
       2x_1 & 2x_2 \\ x_2 & x_1
+    \end{array}\right]
+    \quad
+    a = \left[\begin{array}{c}
+        2 \\ 1
     \end{array}\right].
   \end{equation*}
+  \pause
   \begin{equation*}
     F(2,1) = \left[\begin{array}{c}
       1 \\ 1
     \end{array}\right]
-    \qquad
+    \quad
     F'(2,1) = \left[\begin{array}{cc}
       4 & 2 \\ 1 & 2
-    \end{array}\right].
+    \end{array}\right]
+    \quad
   \end{equation*}
-}
-
-\myframe{
-  \ctr{A Aproximação linear}
   \begin{equation*}
-    F(2,1) = \left[\begin{array}{c}
-      1 \\ 1
-    \end{array}\right]
-    \qquad
-    F'(2,1) = \left[\begin{array}{cc}
-      4 & 2 \\ 1 & 2
-    \end{array}\right].
-  \end{equation*}
-  \begin{align*}
-   L(x) & =
-    \left[\begin{array}{c}
-      1 \\ 1
-    \end{array}\right] +
-    \left[\begin{array}{cc}
-      4 & 2 \\ 1 & 2
-    \end{array}\right]
-    \left[\begin{array}{c}
-      x_1 - 2 \\ x_2 - 1
-    \end{array}\right] \\
-    & =
+   L(x) =
     \left[\begin{array}{c}
       4x_1 + 2x_2 - 9 \\
       x_1 + 2x_2 - 3
-    \end{array}\right]
-  \end{align*}
+    \end{array}\right].
+  \end{equation*}
 }
 
 \myframetop{
@@ -158,38 +212,24 @@
   \end{center}
 }
 
-\subsection*{Método de Newton}
-
 \myframe{
-  \ctr{O Método de Newton}
-  \begin{enumerate}
-    \item Dado $x^0$, faça $k = 0$.
-    \item Encontre $L_k$, a aproximação linear de $F$ em torno
-      de $x^k$.
-    \item Resolva o sistema linear $L_k(x) = 0$, obtendo
-      $x^{k+1}$.
-    \item Incremente $k$ e volte ao passo 2.
-  \end{enumerate}
+  \ctr{ A solução do sistema linear }
+  \[ L(x) = F(a) + F'(a)(x - a) = 0, \] \pause
+  $$ F'(a)(x-a) = -F(a), $$ \pause
+  \[ x = a - [F'(a)]^{-1}F(a), \]
+  $F'(a)$ não singular.
 }
 
-\myframe{
-  \ctr{O Método de Newton}
-  $$ L_k(x) = F(x^k) + F'(x^k)(x - x^k), $$
-  $$ L_k(x^{k+1}) = 0, $$
-  $$ x^{k+1} = x^k + d^k, $$
-  $$ F(x^k) + F'(x^k)d^k = 0, $$
-  $$ F'(x^k)d^k = -F(x^k). $$
-}
+\subsection{Método de Newton}
 
 \myframe{
   \ctr{O Método de Newton}
-  \begin{enumerate}
-    \item Dado $x^0$, faça $k = 0$.
-    \item Encontre $d^k$, solução do sistema linear
-      $F'(x^k)d^k = -F(x^k)$.
-    \item Faça $x^{k+1} = x^k + d^k$.
-    \item Incremente $k$ e volte ao passo 2.
-  \end{enumerate}
+  Dado $x^0$, defina as sequências $\{d^k\}$ e $\{x^k\}$ por
+  \[ F'(x^k)d^k = -F(x^k), \]
+  \[ x^{k+1} = x^k + d^k, \]
+  supondo-as bem definidas. \pause
+
+  Sob {\bf hipóteses} $F(x^k) \rightarrow 0$.
 }
 
 \myframe{
@@ -203,35 +243,64 @@
   * Com 5 casas decimais
 }
 
+\section{Otimização}
+
 \myframe{
-  \ctr{Em uma dimensão}
-  $$ x^{k+1} = x^k - \frac{f(x^k)}{f'(x^k)} $$
+  \ctr{Otimização}
+  $$ \min f(x), \qquad f:\mathbb{R}^n\rightarrow\mathbb{R}, f \in C^2 $$
+  \pause
+  \begin{description}
+    \item<2->[CN1] Se $x^*$ é um minimizador local de $f$, então
+      $\nabla f(x^*) = 0$.
+    \item<3->[CN2] Se $x^*$ é um minimizador local de $f$, então
+      $\nabla f(x^*) = 0$ e $\nabla^2 f(x^*)$ é semidefinida positiva.
+    \item<4->[CS2] Se $\nabla f(x^*) = 0$ e $\nabla^2 f(x^*)$ é definida positiva,
+      então $x^*$ é um minimizador local de $f$.
+  \end{description}
 }
 
-\myframe{
-  \ctr{Em uma dimensão}
+\subsection{O Método de Newton para otimização}
+
+\myframetop{
+  \ctr{O Método de Newton para otimização}
+  $$ F(x) = \nabla f(x) $$
+  $$ F'(x) = \nabla^2 f(x) $$
+  \pause
+  $$ \nabla^2 f(x^k)d^k = -\nabla f(x^k) $$
+  $$ x^{k+1} = x^k + d^k $$
+}
+
+\myframetop{
+  \ctr{O Método de Newton para otimização}
+  \only<1>{
+    $$ \nabla^2f(x^k)d + \nabla f(x^k) = 0. $$
+  }
+  \only<2->{
+    $$ \underbrace{\nabla^2f(x^k)d + \nabla f(x^k)}_{\nabla m(d)} = 0. $$
+  }
+  \only<3->{
+    $$ m(d) = \frac{1}{2}d^T\nabla^2 f(x^k)d + \nabla f(x^k)^Td + f(x^k).$$
+  }
+  \only<4->{
+    $$ d^k = \arg\min_d m(d). $$
+    $$ x^{k+1} = \arg\min_x m(x-x^k). $$
+  }
+}
+
+\myframetop{
+  \ctr{O Método de Newton para otimização}
+  $$ f(x) = (1-x_1)^2 + 4(x_2 - x_1^2)^2$$
   \begin{center}
-    \only<1>{ \includegraphics[height=0.8\textheight]{src/newton1d1-s1.png} }
+    \foreach \a in {1,2,3,4,5,6} {
+      \only<\a>{ \includegraphics[height=0.6\textheight]{src/rosenbr\a.png} }
 
-    \only<2>{ \includegraphics[height=0.8\textheight]{src/newton1d1-s2.png} }
-
-    \only<3>{ \includegraphics[height=0.8\textheight]{src/newton1d1-s3.png} }
-
-    \only<4>{ \includegraphics[height=0.8\textheight]{src/newton1d2-s1.png} }
-
-    \only<5>{ \includegraphics[height=0.8\textheight]{src/newton1d2-s2.png} }
-
-    \only<6>{ \includegraphics[height=0.8\textheight]{src/newton1d2-s3.png} }
-
-    \only<7>{ \includegraphics[height=0.8\textheight]{src/newton1d3-s1.png} }
-
-    \only<8>{ \includegraphics[height=0.8\textheight]{src/newton1d3-s2.png} }
-
-    \only<9>{ \includegraphics[height=0.8\textheight]{src/newton1d3-s3.png} }
+    }
   \end{center}
 }
 
-\subsection*{Convergência}
+\section{Convergência}
+
+\subsection{Convergência}
 
 \myframe{
   $$ f(x) = x^2 - 1 $$
@@ -346,58 +415,5 @@
   \end{equation*}
   \begin{center}
     \includegraphics[height=0.7\textheight]{src/ex6.png}
-  \end{center}
-}
-
-\section*{Otimização}
-
-\myframe{
-  \ctr{Otimização}
-  $$ \min f(x), \qquad f:\mathbb{R}^n\rightarrow\mathbb{R}, f \in C^2 $$
-  \begin{description}
-    \item[CN1] Se $x^*$ é um minimizador local de $f$, então
-      $\nabla f(x^*) = 0$.
-    \item[CN2] Se $x^*$ é um minimizador local de $f$, então
-      $\nabla f(x^*) = 0$ e $\nabla^2 f(x^*)$ é semidefinida positiva.
-    \item[CS2] Se $\nabla f(x^*) = 0$ e $\nabla^2 f(x^*)$ é definida positiva,
-      então $x^*$ é um minimizador local de $f$.
-  \end{description}
-}
-
-\subsection*{O Método de Newton para otimização}
-
-\myframe{
-  \ctr{O Método de Newton para otimização}
-  $$ F(x) = \nabla f(x) $$
-  $$ F'(x) = \nabla^2 f(x) $$
-  $$ \nabla^2 f(x^k)d^k = -\nabla f(x^k) $$
-  $$ x^{k+1} = x^k + d^k $$
-}
-
-\myframetop{
-  \ctr{O Método de Newton para otimização}
-  \only<1>{
-    $$ \nabla^2f(x^k)d + \nabla f(x^k) = 0. $$
-  }
-  \only<2->{
-    $$ \underbrace{\nabla^2f(x^k)d + \nabla f(x^k)}_{\nabla m(d)} = 0. $$
-  }
-  \only<3->{
-    $$ m(d) = \frac{1}{2}d^T\nabla^2 f(x^k)d + \nabla f(x^k)^Td + f(x^k).$$
-  }
-  \only<4->{
-    $$ d^k = \arg\min_d m(d). $$
-    $$ x^{k+1} = \arg\min_x m(x-x^k). $$
-  }
-}
-
-\myframetop{
-  \ctr{O Método de Newton para otimização}
-  $$ f(x) = (1-x_1)^2 + 4(x_2 - x_1^2)^2$$
-  \begin{center}
-    \foreach \a in {1,2,3,4,5,6} {
-      \only<\a>{ \includegraphics[height=0.6\textheight]{src/rosenbr\a.png} }
-
-    }
   \end{center}
 }
